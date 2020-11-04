@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Employees"
+    }
+  },
+  "defaultProject": "Employees",
+  "cli": {
+    "analytics": "680aaf84-abff-4423-b4b7-6018248615a6"
+  }
 }
