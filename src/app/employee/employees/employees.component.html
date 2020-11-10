@@ -1,0 +1,14 @@
+<p>employees works!</p>
+<button (click)="getEmployeees()">employees</button>
+
+<div>
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <input type="text" class="fortextbox" name="id" placeholder="name" formControlName="name">
+        <br />
+
+        <input type="text" class="fortextbox" name="age" placeholder="age" formControlName="age">
+        <br />
+
+        <input type="submit" class="forsubmit" value="Log In">
+    </form>
+</div>
