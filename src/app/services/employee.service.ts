@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { person } from '../interfaces/person';
-import { newperson } from '../interfaces/newperson';
+import { catchError } from 'rxjs/operators'
+import { throwError } from 'rxjs';
 
 const httpOptionsPlain = {
   headers: new HttpHeaders({
@@ -17,12 +18,14 @@ const httpOptionsPlain = {
 export class EmployeeService {
 
 
-  url = "http://localhost:3000/";
+  url = "http://localhost:4000/";
   posturl = "http://localhost:3000/data";
   constructor(public httpClient: HttpClient) { }
 
   sendGetRequest(): Observable<person[]> {
-    return this.httpClient.get<person[]>(this.url);
+    return this.httpClient.get<person[]>(this.url).pipe(
+      catchError(this.handleError)
+     );
   }
 
   postUser(user) {
@@ -34,5 +37,9 @@ export class EmployeeService {
       headers: headers
     })
   }
+
+  handleError(error: HttpErrorResponse){
+    return throwError(error);
+    }
 
 }

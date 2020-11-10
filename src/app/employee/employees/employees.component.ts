@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-employees',
@@ -24,8 +25,12 @@ export class EmployeesComponent implements OnInit {
 
   getEmployeees() {
     this.employeeService.sendGetRequest().subscribe(data => {
-      console.log(data);
-    })
+      console.log(data)
+    },
+    error => {
+      console.log(error);
+    }
+    )
   }
 
   onClickSubmit(data) {
