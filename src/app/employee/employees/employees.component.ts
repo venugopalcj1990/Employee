@@ -15,7 +15,9 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.formdata = new FormGroup({
-      name: new FormControl(),
+      id: new FormControl(),
+      firstname: new FormControl(),
+      lastname: new FormControl(),
       age: new FormControl(),
     });
   }

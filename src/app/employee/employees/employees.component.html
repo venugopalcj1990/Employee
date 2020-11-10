@@ -3,9 +3,12 @@
 
 <div>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
-        <input type="text" class="fortextbox" name="id" placeholder="name" formControlName="name">
+        <input type="text" class="fortextbox" name="id" placeholder="id" formControlName="id">
         <br />
-
+        <input type="text" class="fortextbox" name="firstname" placeholder="firstname" formControlName="firstname">
+        <br />
+        <input type="text" class="fortextbox" name="lastname" placeholder="lastname" formControlName="lastname">
+        <br />
         <input type="text" class="fortextbox" name="age" placeholder="age" formControlName="age">
         <br />
 
