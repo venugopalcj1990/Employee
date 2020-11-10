@@ -1,6 +1,8 @@
 <p>employees works!</p>
 <button (click)="getEmployeees()">employees</button>
 
+<button mat-button color="primary" (click)="getEmployeees()" >Employees</button>
+
 <div>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
         <input type="text" class="fortextbox" name="id" placeholder="id" formControlName="id">

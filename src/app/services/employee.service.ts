@@ -18,7 +18,7 @@ const httpOptionsPlain = {
 export class EmployeeService {
 
 
-  url = "http://localhost:4000/";
+  url = "http://localhost:3000/";
   posturl = "http://localhost:3000/data";
   constructor(public httpClient: HttpClient) { }
 
